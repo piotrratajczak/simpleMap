@@ -1,8 +1,10 @@
 {
   "name": "very-simple-react-map",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": ["dist"],
   "keywords": "ol3, react, map, lat, lng, zoom",
-  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "openlayers": "^4.6.5",
@@ -11,18 +13,18 @@
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4"
   },
+  "peerDependencies": {
+     "react": "^16.3.2",
+     "react-dom": "^16.3.2"
+   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build-examples": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build":
+      "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/piotrratajczak/simpleMap"
