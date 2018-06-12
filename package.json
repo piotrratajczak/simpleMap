@@ -1,24 +1,26 @@
 {
   "name": "very-simple-react-map",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": "ol3, react, map, lat, lng, zoom",
+  "dependencies": {
+    "openlayers": "4.6.5"
+  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "babel-cli": "6.26.0",
+    "babel-preset-stage-2": "6.24.1",
+    "prop-types": "15.6.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0",
     "react-scripts": "1.1.4"
   },
   "peerDependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "openlayers": "^4.6.5"
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
   },
   "scripts": {
     "start": "react-scripts start",
