@@ -1,6 +1,6 @@
 {
   "name": "very-simple-react-map",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": "ol3, react, map, lat, lng, zoom",
   "dependencies": {},
   "devDependencies": {
