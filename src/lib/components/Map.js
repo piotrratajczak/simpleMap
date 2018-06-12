@@ -6,9 +6,14 @@ import ol from 'openlayers'
 class Map extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
-    const { lat, lng, zoom } = props
+    const { lat, lng, zoom } = props;
+
+    this.view = new ol.View({
+      center: ol.proj.fromLonLat([lng, lat]),
+      zoom,
+    });
 
     this.map = new ol.Map({
       layers: [
@@ -17,11 +22,13 @@ class Map extends Component {
           source: new ol.source.OSM(),
         }),
       ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([lng, lat]),
-        zoom,
-      })
-    })
+      view: this.view
+    });
+  }
+
+  componentWillReceiveProps(nextProps){
+    const {lng, lat} = nextProps;
+    this.map.getView().setCenter(ol.proj.fromLonLat([lng, lat]))
   }
 
   componentDidMount(){
