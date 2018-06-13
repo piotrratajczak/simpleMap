@@ -22,7 +22,8 @@ class Map extends Component {
           source: new ol.source.OSM(),
         }),
       ],
-      view: this.view
+      view: this.view,
+      controls: []
     });
 
     this.map.on('click', evt => {
@@ -32,16 +33,31 @@ class Map extends Component {
     });
   }
 
+  componentWillMount(){
+    // for testing as package imported to angular6 app - remove this console.log
+    // in next version
+    console.log('will mount')
+  }
+
   componentWillReceiveProps(nextProps){
+    // for testing as package imported to angular6 app - remove this console.log
+    // in next version
+    console.log('receive props')
     const {lng, lat} = nextProps;
     this.map.getView().setCenter(ol.proj.fromLonLat([lng, lat]))
   }
 
   componentDidMount(){
+    // for testing as package imported to angular6 app - remove this console.log
+    // in next version
+    console.log('did mount')
     this.map.setTarget(this.mapContainer)
   }
 
   componentWillUnmount() {
+    // for testing as package imported to angular6 app - remove this console.log
+    // in next version
+    console.log('will unmount')
     this.map.setTarget(null)
   }
 
