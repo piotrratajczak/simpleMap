@@ -26,8 +26,9 @@ class Map extends Component {
     });
 
     this.map.on('click', evt => {
-      let {onClick} = this.props, {coordinate} = evt;
-      onClick? onClick(coordinate) : console.log(coordinate)
+      let {onClick} = this.props,
+      coordinate = ol.proj.transform(evt.coordinate,'EPSG:3857', 'EPSG:4326');
+      onClick? onClick(coordinate) : console.log(coordinate);
     });
   }
 
