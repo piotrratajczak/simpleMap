@@ -24,6 +24,11 @@ class Map extends Component {
       ],
       view: this.view
     });
+
+    this.map.on('click', evt => {
+      let {onClick} = this.props, {coordinate} = evt;
+      onClick? onClick(coordinate) : console.log(coordinate)
+    });
   }
 
   componentWillReceiveProps(nextProps){
@@ -52,6 +57,7 @@ Map.propTypes = {
   lat: PropTypes.number,
   lng: PropTypes.number,
   zoom: PropTypes.number,
+  onClick: PropTypes.func,
 }
 
 Map.defaultProps = {

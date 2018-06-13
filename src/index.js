@@ -18,6 +18,7 @@ class App extends Component {
 
     this.next = this.next.bind(this);
     this.prev = this.prev.bind(this);
+    this.handleMapClick = this.handleMapClick.bind(this);
   }
 
   next(){
@@ -32,11 +33,15 @@ class App extends Component {
     this.setState({active: newVal})
   }
 
+  handleMapClick(coordinate){
+    console.log('Map clicked!!!!',coordinate);
+  }
+
   render() {
     const {data, active} = this.state;
     return (
       <div>
-        <Map {...data[active]} zoom={18}/>
+        <Map {...data[active]} zoom={18} onClick={this.handleMapClick}/>
         <div style={{display:'flex'}}>
           <button onClick={this.prev} style={{margin:'auto'}}> Prev </button>
           <button onClick={this.next} style={{margin: 'auto'}}> Next </button>
